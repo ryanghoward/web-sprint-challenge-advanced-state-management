@@ -11,17 +11,17 @@ export const FETCH_FAIL = "FETCH_FAIL";
 export const ADD_SMURF = "ADD_SMURF";
 
 export const fetchStart = () => {
-  return ({type: FETCH_START});
-}
+  return { type: FETCH_START };
+};
 
 export const fetchSuccess = (smurf) => {
-  return ({type: FETCH_SUCCESS, payload: smurf};)
-}
+  return { type: FETCH_SUCCESS, payload: smurf };
+};
 
 export const fetchFail = (err) => {
-  return ({type: FETCH_FAIL, payload: err})
-}
+  return { type: FETCH_FAIL, payload: err };
+};
 
 export const addSmurf = (item) => {
-  return ({type: ADD_SMURF, payload: item};)
-}
+  return { type: ADD_SMURF, payload: item };
+};
