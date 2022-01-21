@@ -10,9 +10,6 @@ const AddForm = (props) => {
     description: "",
   });
 
-  //remove when error state is added
-  //   const errorMessage = "";
-
   const handleChange = (e) => {
     setState({
       ...state,
@@ -23,12 +20,10 @@ const AddForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (state.name === "" || state.position === "" || state.nickname === "") {
-      //dispatch a custom error action
       props.fetchFail(
         "Oops! A Name, Position, Nickname, and Description are required!"
       );
     } else {
-      //dispatch an addSmurf action
       props.addSmurf(state);
     }
   };
