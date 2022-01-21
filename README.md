@@ -114,10 +114,10 @@ Connect this component to the error state slice, setError and addSmurf actions. 
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
-- [ ] Check Codegrade before the deadline to compare its results against your local tests.
-- [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-- [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+- [x] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
+- [x] Check Codegrade before the deadline to compare its results against your local tests.
+- [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+- [x] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
@@ -125,8 +125,20 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
+With context API, prop drilling is no longer necessary. Passing data to a nested component through props allows for the potential of syntax errors and/or spelling issues to occur. We can wrap the values we want exposed to our components in context API and pull them straight from within.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions: Actions are a type of JavaScript object that contains data. Actions are the only source of information for the store. The type field in actions indicates the action to be taken, whereas the other fields give data or information.
+
+Reducers: Reducers come in handy because actions only instruct WHAT to do and not HOW to execute it. Reducers are simple functions that take the current state and action, and return a new state while instructing the store on exactly WHAT it needs to do.
+
+Store: Store is the object that holds the application's state. Because the state of the application is saved inside it as a single object tree, it is commonly referred to as the 'single source of truth' within a redux application.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
 
+redux-thunk is what is known as "Middleware" which allows you to call action-creators that return a function (thunk) that takes the store's dispatch method as an argument and then dispatches the synchronous action after the API or side effects have ended.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I would have to say Context API. For me, it is a lot less complicated than Redux. The consumer component instance can access all of the data provided by the Provider Component at any level, so there is no need to provide data to the children at each level. It's easy to write and maintain code that can be reused. As with anything, there are cons of course, but I had the most fun with that assignment this week.
