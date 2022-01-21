@@ -11,8 +11,6 @@ export const FETCH_FAIL = "FETCH_FAIL";
 export const ADD_SMURF = "ADD_SMURF";
 
 export const fetchSmurfs = () => (dispatch) => {
-  console.log("dispatch successful");
-
   dispatch(fetchStart());
 
   axios

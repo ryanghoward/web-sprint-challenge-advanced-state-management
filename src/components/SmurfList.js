@@ -12,7 +12,7 @@ const SmurfList = (props) => {
   return (
     <div className='listContainer'>
       {smurf.map((testSmurf) => (
-        <Smurf smurf={testSmurf} />
+        <Smurf smurf={testSmurf} key={testSmurf.id} />
       ))}
     </div>
   );

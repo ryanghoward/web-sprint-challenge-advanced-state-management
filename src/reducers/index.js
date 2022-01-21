@@ -16,8 +16,6 @@ export const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  console.log(action.payload, "actions");
-
   switch (action.type) {
     case FETCH_START:
       return {
