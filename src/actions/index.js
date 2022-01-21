@@ -10,6 +10,21 @@ export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 export const ADD_SMURF = "ADD_SMURF";
 
+export const fetchSmurfs = () => (dispatch) => {
+  console.log("dispatch successful");
+
+  dispatch(fetchStart());
+
+  axios
+    .get(`http://localhost:3333/smurfs`)
+    .then((res) => {
+      dispatch(fetchSuccess(res.data));
+    })
+    .catch((err) => {
+      dispatch(fetchFail(err));
+    });
+};
+
 export const fetchStart = () => {
   return { type: FETCH_START };
 };
@@ -23,5 +38,14 @@ export const fetchFail = (err) => {
 };
 
 export const addSmurf = (item) => {
+  axios
+    .post(`http://localhost:3333/smurfs`, item)
+    .then((res) => {
+      console.log("post: ", res);
+    })
+    .catch((res) => {
+      console.log("fail: ", res);
+    });
+
   return { type: ADD_SMURF, payload: item };
 };
